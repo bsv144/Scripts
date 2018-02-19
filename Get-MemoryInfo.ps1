@@ -1,0 +1,1 @@
+ Get-WmiObject CIM_PhysicalMemory |select BankLabel, Capacity, Formfactor, Manufacturer, MemoryType, Model, PartNumber | ft

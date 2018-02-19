@@ -1,0 +1,20 @@
+
+# Distr folder for flash player files
+$distr_folder = "D:\Share\FlashPlayer\"
+
+$urls = @()
+$releases = 'http://fpdownload2.macromedia.com/get/flashplayer/update/current/xml/version_en_win_pl.xml'
+
+
+$XML = New-Object  System.Xml.XmlDocument
+$XML.load($releases)
+$version = $XML.XML.update.version.replace(',', '.')
+$major_version = ([version]$version).Major
+
+$urls += "https://download.macromedia.com/get/flashplayer/pdc/${version}/install_flash_player_${major_version}_plugin.msi"
+$urls += "https://download.macromedia.com/pub/flashplayer/pdc/${version}/install_flash_player_${major_Version}_active_x.msi"
+    
+$WebClient = New-Object System.Net.WebClient
+foreach ($url in $urls) {
+	$WebClient.DownloadFile($url,$distr_folder)
+}

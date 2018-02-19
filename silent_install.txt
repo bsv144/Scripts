@@ -1,0 +1,7 @@
+msiexec.exe /i "d:\distr\Mindjet MindManager 2017.msi" /qn /log "d:\distr\mm.log"
+
+#K-Lite codec
+To install silently with all settings at defaults use:
+INSTALLERFILENAME /verysilent
+With default settings, Media Player Classic will be used as default player.
+D:\PortableSoft\PsTools\psexec.exe \\ip -c D:\Distr\Codecs\K-Lite_Codec_Pack_1355_Mega.exe /verysilent
